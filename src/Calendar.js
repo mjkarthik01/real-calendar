@@ -6,7 +6,7 @@ import "./calendar.css";
 
 function CalendarReal() {
   const [dateRange, setDateRange] = useState([new Date(), new Date()]);
-
+  const [currentView, setCurrentView] = useState();
   const handleDateChange = (newDate) => {
     setDateRange(newDate);
   };
@@ -36,22 +36,14 @@ function CalendarReal() {
     console.log("Applying date range:", dateRange);
   };
   useEffect(() => {
-    // ✅ Create element
     const el = document.createElement("button");
 
-    // ✅ Add classes to element
     el.classList.add("apply-btn", "text-lg");
 
-    // ✅ Set ID attribute on the element
     el.setAttribute("id", "my-id");
 
-    // ✅ Add text content to the element
     el.textContent = "Apply";
 
-    // ✅ Or set the innerHTML of the element
-    // el.innerHTML = `<span>One, two, three</span>`;
-
-    // ✅ add element to DOM
     const box = document.getElementsByClassName("react-calendar")[0];
     console.log(box);
     box && box.appendChild(el);
@@ -69,6 +61,11 @@ function CalendarReal() {
           formatShortWeekday={formatShortWeekday}
           formatMonthYear={formatMonthYear}
           showMonthAndYearPickers
+          next2Label={null}
+          prev2Label={null}
+          showNeighboringMonth={false}
+          minDetail={"decade"}
+          view={currentView}
         />
       </div>
     </div>
