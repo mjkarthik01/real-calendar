@@ -141,14 +141,14 @@ div.react-calendar--doubleView .react-calendar__viewContainer {
 }
 
 .react-calendar__tile--now, .react-calendar__tile--now:enabled:focus, .react-calendar__tile--now:enabled:hover {
-  background: #ece5fb;
+  background: none;
   border-radius: 3px;
   color: #5d008f;
 }
 
 .react-calendar__tile--hasActive {
-  background: rgba(236, 229, 251, 1);
-
+  background: rgba(236, 229, 251, 1) !important;
+  color: #5d008f;
 }
 
 
